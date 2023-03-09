@@ -20,15 +20,28 @@ public class HomeWorks {
     public void cssLocators(){
 
         // by tag name
-        WebElement el = wd.findElement(By.tagName("h1"));
-        WebElement el1 = wd.findElement(By.cssSelector("h1"));
+        WebElement el = wd.findElement(By.tagName("div"));
+        WebElement el1 = wd.findElement(By.cssSelector("div"));
+
+        WebElement elm = wd.findElement(By.tagName("button"));
+        WebElement elm1 = wd.findElement(By.cssSelector("button"));
+        WebElement web = wd.findElement(By.xpath("//button"));
+
+        WebElement elm2 = wd.findElement(By.tagName("a"));
+        WebElement elm3 = wd.findElement(By.cssSelector("a"));
+
+        WebElement elm4 = wd.findElement(By.tagName("h1"));
+        WebElement elm5 = wd.findElement(By.cssSelector("h1"));
 
         // by class
         WebElement el2 = wd.findElement(By.className("container"));
         WebElement el3 = wd.findElement(By.cssSelector(".container"));
+        wd.findElement(By.xpath("//*[@class='container']"));
+
 
         WebElement el4 = wd.findElement(By.className("active"));
         WebElement el5 = wd.findElement(By.cssSelector(".active"));
+
         //By id
         WebElement el6 = wd.findElement(By.id("root"));
         WebElement el7 = wd.findElement(By.cssSelector("#root"));
@@ -42,6 +55,11 @@ public class HomeWorks {
         WebElement el11 = wd.findElement(By.cssSelector("[name$='ation']"));
         WebElement el12 = wd.findElement(By.cssSelector("[name*='istr']"));
 
+        //Start
+        WebElement we = wd.findElement(By.xpath("//input[starts-with(@placeholder, 'Em')]"));
+
+        //contains
+        WebElement we1 = wd.findElement(By.xpath("//input[contains(@placeholder, 'ss')]"));
 
     }
 

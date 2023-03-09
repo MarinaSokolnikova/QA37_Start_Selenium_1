@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class Start {
@@ -9,8 +10,9 @@ public class Start {
     @Test
     public void start(){
         wd = new ChromeDriver();
-        //wd.get("http://www.google.com/"); //without history
-        wd.navigate().to("http://www.google.com/"); //with history
+        //wd = new FirefoxDriver();
+        //wd.get("https://www.google.com/"); //without history
+        wd.navigate().to("https://www.google.com/"); //with history
         wd.navigate().back();
         wd.navigate().forward();
         wd.navigate().refresh();
