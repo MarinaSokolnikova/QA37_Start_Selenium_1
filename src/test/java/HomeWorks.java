@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class HomeWorks {
 
     WebDriver wd;
@@ -93,5 +95,32 @@ public class HomeWorks {
         WebElement we17 = wd.findElement(By.xpath("//input[contains(@placeholder, 'ss')]"));
 
     }
+
+    @Test
+    public void  classwork(){
+
+        //parent
+        WebElement el = wd.findElement(By.xpath("//h1/parent::*"));
+        WebElement el1 = wd.findElement(By.xpath("//h1/parent::div"));
+        WebElement el2 = wd.findElement(By.xpath("//h1/.."));
+
+        //ancestor
+        WebElement el3 = wd.findElement(By.xpath("//h1/ancestor::*")); //all
+        WebElement el4 = wd.findElement(By.xpath("//h1/ancestor::div")); //two options
+        WebElement el5 = wd.findElement(By.xpath("//h1/ancestor::div[2]"));
+
+        // //h1/ancestor-or-self::* plus element
+        WebElement el6 = wd.findElement(By.xpath("//h1/ancestor-or-self::*"));
+        List<WebElement> list = wd.findElements(By.xpath("//h1/ancestor-or-self::*"));
+
+        //following-sibling
+        List<WebElement> list2 = wd.findElements(By.xpath("//h1/following-sibling::*"));
+
+        //preceding-sibling
+        WebElement el7 = wd.findElement(By.xpath("//a[last()]/preceding-sibling::h1"));
+        List<WebElement> list3 = wd.findElements(By.xpath("//a[last()]/preceding-sibling::a"));
+    }
+
+    
 
 }
